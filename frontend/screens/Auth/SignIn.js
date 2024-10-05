@@ -94,16 +94,18 @@ const SignIn = () => {
               />
             </View>
 
-            {/* Gender and Age Row */}
-            <View className="flex-row space-x-4">
-              {/* Gender */}
-              <View className="flex-1">
-                <Text className="text-gray-700 mb-1">Gender*</Text>
-                <TouchableOpacity className="border border-gray-300 rounded-lg p-3 flex-row justify-between items-center">
-                  <Text className="text-gray-400">Gender*</Text>
-                  <ChevronDown width={20} height={20} color="#9CA3AF" />
-                </TouchableOpacity>
-              </View>
+                        {/* Gender and Age Row */}
+                        <View className="flex-row space-x-4">
+                            {/* Gender */}
+                            <View className="flex-1">
+                                <Text className="text-gray-700 mb-1">Gender*</Text>
+                                <TouchableOpacity
+                                    className="border border-gray-300 rounded-lg p-3 flex-row justify-between items-center"
+                                >
+                                    <Text className="text-gray-400">Gender*</Text>
+                                    <ChevronDown width={20} height={20} color="#9CA3AF" />
+                                </TouchableOpacity>
+                            </View>
 
               {/* Age */}
               <View className="flex-1">
@@ -169,3 +171,4 @@ const SignIn = () => {
 };
 
 export default SignIn;
+

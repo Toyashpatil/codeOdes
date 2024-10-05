@@ -3,6 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Home from "./layout/Home";
 import SignIn from "./screens/Auth/SignIn";
+import LogIn from "./screens/Auth/LogIn";
 
 
 
@@ -13,6 +14,7 @@ function AppNavigator() {
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="SignIn" component={SignIn} />
+        <Stack.Screen name="LogIn" component={LogIn} />
       </Stack.Navigator>
     </NavigationContainer>
   );
