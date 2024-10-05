@@ -18,6 +18,7 @@ app.use("/uploads", express.static(path.join(__dirname, "public/uploads")));
 
 app.use(errorHandler);
 app.use("/api", require("./routes/csvRoutes"));
+app.use("/user", require("./routes/userRoutes"));
 
 const port = process.env.PORT;
 

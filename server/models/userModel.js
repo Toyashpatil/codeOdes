@@ -1,10 +1,14 @@
 const mongoose = require("mongoose");
 
-const Schema = mongoose.Schema(
+const userSchema = mongoose.Schema(
   {
     name: {
       type: String,
-      required: true,
+      // required: true,
+    },
+    otp: {
+      type: String,
+      // required:true
     },
     phone: {
       type: Number,
@@ -12,15 +16,15 @@ const Schema = mongoose.Schema(
     },
     age: {
       type: Number,
-      required: true,
+      // required: true,
     },
     gender: {
       type: String,
-      required: true,
+      // required: true,
     },
     college_name: {
       type: String,
-      required: true,
+      // required: true,
     },
   },
   {
@@ -28,4 +32,4 @@ const Schema = mongoose.Schema(
   }
 );
 
-module.exports = mongoose.model();
+module.exports = mongoose.model("User", userSchema);
