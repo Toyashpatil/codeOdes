@@ -5,9 +5,6 @@ import Home from "./screens/Home/Home";
 import SignIn from "./screens/Auth/SignIn";
 import LogIn from "./screens/Auth/LogIn";
 import OTP from "./screens/Auth/Otp";
-import HomeScreen from "./screens/Home/Home";
-
-
 
 const Stack = createNativeStackNavigator();
 
@@ -15,7 +12,6 @@ function AppNavigator() {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
-       
         <Stack.Screen name="LogIn" component={LogIn} />
         <Stack.Screen name="OTP" component={OTP} />
         <Stack.Screen name="SignIn" component={SignIn} />
