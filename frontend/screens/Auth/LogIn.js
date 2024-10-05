@@ -19,6 +19,9 @@ const LogIn = () => {
 
     const navigation = useNavigation();
 
+    const handleLoginPress = () => {
+        navigation.navigate("OTP");
+    };
     const handleBackPress = () => {
         navigation.navigate("SignIn");
     };
@@ -72,12 +75,12 @@ const LogIn = () => {
                     <View className="rounded-md">
                         <LinearGradient
                             colors={["#0000ff", "#4682b4", "#87ceeb"]}
-                            start={{ x: 0, y: 1 }}
+                            start={{ x: 1, y: 1 }}
                             end={{ x: 1.9, y: 0 }}
                             className="rounded-xl"
                         >
                             <Pressable
-                                // onPress={handleVerify}
+                                onPress={handleLoginPress}
                                 className="p-4 justify-center items-center"
                             >
                                 <Text className="text-white text-lg font-semibold">

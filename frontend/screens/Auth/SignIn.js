@@ -110,7 +110,7 @@ const SignIn = () => {
                             {/* Continue Button */}
                             <LinearGradient
                                 colors={["#0000ff", "#4682b4", "#87ceeb"]}
-                                start={{ x: 0, y: 1 }}
+                                start={{ x: 1, y: 1 }}
                                 end={{ x: 1.9, y: 0 }}
                                 className="rounded-xl"
                             >
