@@ -8,6 +8,7 @@ import {
     Platform,
     SafeAreaView,
     StatusBar as RNStatusBar,
+    Image,
 } from "react-native";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { LinearGradient } from "expo-linear-gradient";
@@ -46,11 +47,13 @@ const LogIn = () => {
                     </TouchableOpacity>
 
                     {/* Header Text */}
-                    <View className="items-center">
-                        <Text className="text-2xl font-bold text-gray-500">Hi User,</Text>
-                        <Text className="text-sm font-semibold text-gray-700 mt-2">
-                            Enter your phone number
-                        </Text>
+                    <View className='items-center justify-center'>
+                        <Image
+                            source={require('../../assets/images/bus.png')}
+                            className="mr-7"
+                            resizeMode="contain"
+                        />
+                        <Text className='text-2xl font-bold text-gray-500'>Welcome👋🏻 Back</Text>
                     </View>
 
                     {/* TextInput for Name */}
