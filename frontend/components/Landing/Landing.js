@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { View, Image, Animated, Text } from 'react-native';
+import { View, Image, Animated } from 'react-native';
 import { Activity } from 'react-native-feather';
 
 const Landing = () => {
@@ -30,31 +30,25 @@ const Landing = () => {
   }, [fadeAnim, scaleAnim]);
 
   return (
-    <View className="flex flex-col justify-center items-center w-full h-full">
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%' }}>
       {/* Background Image */}
       <Image 
         source={require('../../assets/images/splashbg.png')} 
-        className="absolute w-full h-full object-cover"
+        style={{ position: 'absolute', width: '100%', height: '100%' }}
       />
 
       {/* Logo Text */}
-      <View className="flex-row items-center justify-center">
-        {/* <Text className="text-blue-500 font-bold text-5xl">shi</Text>
-        <Text className="text-yellow-400 font-bold text-5xl">▴</Text>
-        <Text className="text-blue-500 font-bold text-5xl">ft</Text> */}
-       <Image 
-        source={require('../../assets/images/bus.png')} 
-        className=""
-      />
+      <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+        <Image 
+          source={require('../../assets/images/bus.png')} 
+          style={{ width: 100, height: 100 }}
+        />
       </View>
 
       {/* Animated Icon */}
-      {/* <Animated.View style={{ opacity: fadeAnim, transform: [{ scale: scaleAnim }] }} className='absolute bottom-16'>
-      <Image 
-        source={require('../../assets/images/bus.png')} 
-        className="absolute w-full h-full object-cover"
-      />
-      </Animated.View> */}
+      <Animated.View style={{ opacity: fadeAnim, transform: [{ scale: scaleAnim }], position: 'absolute', bottom: 16 }}>
+        <Activity color="black" width={100} height={100} />
+      </Animated.View>
     </View>
   );
 };
