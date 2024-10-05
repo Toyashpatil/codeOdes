@@ -1,10 +1,11 @@
 import React, { useEffect, useRef } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Home from "./layout/Home";
+import Home from "./screens/Home/Home";
 import SignIn from "./screens/Auth/SignIn";
 import LogIn from "./screens/Auth/LogIn";
 import OTP from "./screens/Auth/Otp";
+import HomeScreen from "./screens/Home/Home";
 
 
 
