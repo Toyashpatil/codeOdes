@@ -98,7 +98,7 @@ const jwt = require("jsonwebtoken");
 
 // POST -> /user/verify/otp
 const verifyOtp = asyncHandler(async (req, res) => {
-  let { phone, otp, name } = req.body;
+  let { phone, otp, name, gender, age, college_name } = req.body;
 
   if (!phone || !otp) {
     return res.status(400).json({ error: "Phone number and OTP are required" });
@@ -171,10 +171,10 @@ const verifyOtp = asyncHandler(async (req, res) => {
       user.isVerified = true;
 
       if (!user.name) {
-        if (!name) {
+        if (!name && !age && !gender && college_name) {
           return res
             .status(400)
-            .json({ error: "Name is required for new users" });
+            .json({ error: "All fields are required for new users" });
         }
         user.name = name;
       }
