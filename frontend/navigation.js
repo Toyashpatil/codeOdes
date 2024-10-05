@@ -14,7 +14,7 @@ function AppNavigator() {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="SignIn" component={SignIn} />
+        {/* <Stack.Screen name="SignIn" component={SignIn} /> */}
         <Stack.Screen name="LogIn" component={LogIn} />
         <Stack.Screen name="OTP" component={OTP} />
         <Stack.Screen name="Home" component={Home} />
