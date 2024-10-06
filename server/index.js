@@ -23,6 +23,7 @@ app.use("/uploads", express.static(path.join(__dirname, "public/uploads")));
 app.use(errorHandler);
 app.use("/api", require("./routes/csvRoutes"));
 app.use("/user", require("./routes/userRoutes"));
+// app.use("/payment", require("./routes/razorPay"));
 
 const port = process.env.PORT;
 

@@ -10,6 +10,7 @@ import {
 import { LinearGradient } from "expo-linear-gradient";
 import { FontAwesome, Feather, MaterialIcons } from "@expo/vector-icons";
 import ProfileHeader from "./ProfileHeader";
+import NewProfileHeader from "./NewProfileHeader";
 
 const EditProfile = () => {
     const [isEditingDetails, setIsEditingDetails] = useState(false);
@@ -50,14 +51,14 @@ const EditProfile = () => {
             <StatusBar barStyle="dark-content" backgroundColor="white" />
             <View className="flex-1 bg-gray-100">
                 <View className="bg-white px-4 py-3">
-                    <ProfileHeader />
+                    <NewProfileHeader />
                 </View>
 
                 <View className="p-4">
                     <View className="flex-row justify-between items-center mb-4">
                         <Text className="text-lg font-semibold">Personal Details</Text>
                         <Pressable onPress={toggleEditDetails}>
-                            <Text className="text-green-500">{isEditingDetails ? "Cancel" : "Edit"}</Text>
+                            <Text className="text-blue-500">{isEditingDetails ? "Cancel" : "Edit"}</Text>
                         </Pressable>
                     </View>
 
@@ -104,7 +105,7 @@ const EditProfile = () => {
                     <View className="flex-row justify-between items-center mb-4">
                         <Text className="text-lg font-semibold">Change Password</Text>
                         <Pressable onPress={toggleEditPassword}>
-                            <Text className="text-green-500">{isEditingPassword ? "Cancel" : "Edit"}</Text>
+                            <Text className="text-blue-500">{isEditingPassword ? "Cancel" : "Edit"}</Text>
                         </Pressable>
                     </View>
 
@@ -130,21 +131,21 @@ const EditProfile = () => {
                 </View>
 
                 <View className="p-4 mb-4 absolute w-full bottom-0">
-                    <LinearGradient
-                        colors={["#007022", "#54d17a", "#bcffd0"]}
-                        start={{ x: 0, y: 1 }}
-                        end={{ x: 1.9, y: 0 }}
-                        className="rounded-xl"
-                    >
-                        <Pressable
-                            onPress={handleSaveSettings}
-                            className="p-3 justify-center items-center"
-                        >
-                            <Text className="text-white text-lg font-semibold">
-                                Save settings
-                            </Text>
-                        </Pressable>
-                    </LinearGradient>
+                <LinearGradient
+              colors={["#0000ff", "#4682b4", "#87ceeb"]}
+              start={{ x: 1, y: 1 }}
+              end={{ x: 1.9, y: 0 }}
+              className="rounded-xl"
+            >
+              <Pressable
+                onPress={handleSaveSettings}
+                className="p-4 justify-center items-center"
+              >
+                <Text className="text-white text-lg font-semibold">
+                  Save settings
+                </Text>
+              </Pressable>
+            </LinearGradient>
                 </View>
             </View>
         </SafeAreaView>

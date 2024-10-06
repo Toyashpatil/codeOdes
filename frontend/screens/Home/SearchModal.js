@@ -10,6 +10,7 @@ import {
   StatusBar,
   Text,
   ScrollView,
+  Touchable,
   TouchableOpacity,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -156,6 +157,7 @@ const SearchModal = ({ isModalVisible, closeSearchModal }) => {
                     borderColor: "#E5E5E5",
                   }}
                 >
+                  <TouchableOpacity>
                   <View style={{ flexDirection: "row", alignItems: "center" }}>
                     <Icon.Home height="20" width="20" stroke="black" />
                     <TouchableOpacity onPress={()=>{Navigation.navigate('/track')}}>
@@ -169,6 +171,7 @@ const SearchModal = ({ isModalVisible, closeSearchModal }) => {
                       </View>
                     </TouchableOpacity>
                   </View>
+                  </TouchableOpacity>
                 </View>
 
                 {/* Office Section */}

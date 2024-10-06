@@ -28,11 +28,21 @@ const LogIn = () => {
 
   const handleLogin = async () => {
     try {
-      await dispatch(loginUser({ phone: phone })).unwrap();
-      navigation.navigate("OTP", { phone: phone });
+      const response = await fetch('http://localhost:3000/user/login', {
+        method: 'POST', // HTTP method
+        headers: {
+          'Content-Type': 'application/json', // Content-type set to JSON
+        },
+        body: JSON.stringify({
+          // Data to be sent in the body of the request
+          phone:9892489468
+        }),
+      });
+      const result = await response.json(); 
+      console.log(result)
+
     } catch (error) {
-      console.error("Login Error:", error);
-      Alert.alert("Error", `Failed to log in: ${error.message}`);
+      console.log('Error : ' + error)
     }
   };
 

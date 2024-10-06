@@ -87,7 +87,7 @@ const Home = () => {
             bottom: 0, // Align to the bottom
             left: 0,
             right: 0, // Stretch across the entire width
-            paddingBottom: bottom ? bottom : 10, // Safe area padding for bottom
+            // paddingBottom: bottom ? bottom : 10, // Safe area padding for bottom
             backgroundColor: 'black', // Adjust color to your preference
           }}
         >
