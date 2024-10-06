@@ -9,10 +9,12 @@ import {
   Platform,
   ImageBackground,
 } from "react-native";
+
 import * as Icon from "react-native-feather";
 import { useNavigation } from "@react-navigation/native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Navbar from "../../components/Navbar/Navbar";
+import SearchModal from "./SearchModal";
 
 const Home = () => {
   const navigation = useNavigation();
@@ -29,6 +31,9 @@ const Home = () => {
     setIsModalVisible(false);
   };
 
+    const handleNavigateToProfile = () => {
+      navigation.navigate('Profile');
+    };
   return (
     <>
       <View
@@ -82,6 +87,10 @@ const Home = () => {
         >
           <Navbar />
         </View>
+        <SearchModal
+        isModalVisible={isModalVisible}
+        closeSearchModal={closeSearchModal}
+      />
       </View>
     </>
   );

@@ -15,20 +15,28 @@ const Footer = () => {
   };
 
   return (
-    <View className="flex-row justify-around items-center bg-white border-t border-gray-200 shadow-lg">
-      <TouchableOpacity className="items-center p-2 rounded-lg">
-        <Icon.Home width={20} height={20} stroke="black" />
-        <Text className='text-xs'>Home</Text>
-      </TouchableOpacity>
-      <TouchableOpacity className="items-center p-2 rounded-lg">
-        <Icon.List width={20} height={20} stroke="black" />
-        <Text className='text-xs'>Orders</Text>
-      </TouchableOpacity>
-      <TouchableOpacity className="items-center p-2 rounded-lg">
-        <Icon.User width={20} height={20} stroke="black" />
-        <Text className='text-xs'>Profile</Text>
-      </TouchableOpacity>
-    </View>
+    <View className="flex-row justify-around border-t border-gray-200 py-3">
+    <TouchableOpacity className="items-center">
+      <Ionicons name="home-outline" size={24} color="#000" />
+      <Text className="text-xs mt-1">Home</Text>
+    </TouchableOpacity>
+    <TouchableOpacity className="items-center">
+      <Ionicons name="wallet-outline" size={24} color="#000" />
+      <Text className="text-xs mt-1">Wallet</Text>
+    </TouchableOpacity>
+    <TouchableOpacity className="items-center">
+      <Ionicons name="ticket-outline" size={24} color="#000" />
+      <Text className="text-xs mt-1">Ticket</Text>
+    </TouchableOpacity>
+    <TouchableOpacity className="items-center">
+      <Ionicons name="notifications-outline" size={24} color="#000" />
+      <Text className="text-xs mt-1">Notification</Text>
+    </TouchableOpacity>
+    <TouchableOpacity className="items-center">
+      <Ionicons name="person" size={24} color="#4A90E2" />
+      <Text className="text-xs mt-1 text-[#4A90E2]">Profile</Text>
+    </TouchableOpacity>
+  </View>
   );
 };
 
