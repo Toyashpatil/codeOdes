@@ -10,10 +10,12 @@ import {
   StatusBar,
   Text,
   ScrollView,
+  TouchableOpacity,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import * as Icon from "react-native-feather";
 import Header from "./BaseHeader";
+// import { Pressable, TouchableOpacity } from "react-native-gesture-handler";
 
 const SearchModal = ({ isModalVisible, closeSearchModal }) => {
   const [searchText, setSearchText] = useState("");
@@ -138,7 +140,7 @@ const SearchModal = ({ isModalVisible, closeSearchModal }) => {
               {/* Home & Office Section */}
               <View style={{ paddingHorizontal: 16, marginTop: 24 }}>
                 <Text style={{ fontWeight: "bold", fontSize: 16, marginBottom: 8 }}>Your Places</Text>
-                
+
                 {/* Home Section */}
                 <View
                   style={{
@@ -156,14 +158,16 @@ const SearchModal = ({ isModalVisible, closeSearchModal }) => {
                 >
                   <View style={{ flexDirection: "row", alignItems: "center" }}>
                     <Icon.Home height="20" width="20" stroke="black" />
-                    <View style={{ marginLeft: 12 }}>
-                      <Text style={{ fontWeight: "bold", fontSize: 16 }}>
-                        Home
-                      </Text>
-                      <Text style={{ color: "#888", fontSize: 14 }}>
-                        Vashi, Mumbai, India
-                      </Text>
-                    </View>
+                    <TouchableOpacity onPress={()=>{Navigation.navigate('/track')}}>
+                      <View style={{ marginLeft: 12 }}>
+                        <Text style={{ fontWeight: "bold", fontSize: 16 }}>
+                          Home
+                        </Text>
+                        <Text style={{ color: "#888", fontSize: 14 }}>
+                          Vashi, Mumbai, India
+                        </Text>
+                      </View>
+                    </TouchableOpacity>
                   </View>
                 </View>
 

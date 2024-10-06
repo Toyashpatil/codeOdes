@@ -9,7 +9,7 @@
   <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
    <meta-data
      android:name="com.google.android.geo.API_KEY"
-     android:value="AIzaSyBiM69tRB7SLXXwZett2vPCABi1MFMA9Sw"/>
+     android:value="AIzaSyAz7NQHTbY7Yfganu4Olls7M8gGH4jTbMk"/>
   <queries>
     <intent>
       <action android:name="android.intent.action.VIEW"/>

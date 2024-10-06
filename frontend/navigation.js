@@ -7,13 +7,11 @@ import LogIn from "./screens/Auth/LogIn";
 import OTP from "./screens/Auth/Otp";
 import Ticket from "./screens/Ticket/Ticket";
 import HomeScreen from "./screens/Home/Home";
-<<<<<<< HEAD
 import Profile from "./screens/Profile/Profile";
 import EditProfile from "./screens/Profile/EditProfile";
-=======
 import Wallet from "./screens/Wallet/Wallet";
 import BuyPackage from "./screens/Buypack/BuyPackage";
->>>>>>> refs/remotes/origin/main
+import Track from "./screens/Track/Track";
 
 
 
@@ -27,19 +25,16 @@ function AppNavigator() {
         {/* <Stack.Screen name="LogIn" component={LogIn} /> */}
         {/* <Stack.Screen name="OTP" component={OTP} /> */}
         {/* <Stack.Screen name="SignIn" component={SignIn} /> */}
-<<<<<<< HEAD
-        <Stack.Screen name="LogIn" component={LogIn} />
-        <Stack.Screen name="OTP" component={OTP} />
-        <Stack.Screen name="HomeScreen" component={HomeScreen} />
-        <Stack.Screen name="Profile" component={Profile} />
-        <Stack.Screen name="EditProfile" component={EditProfile} />
-=======
+        {/* <Stack.Screen name="LogIn" component={LogIn} /> */}
+        {/* <Stack.Screen name="OTP" component={OTP} /> */}
+        {/* <Stack.Screen name="HomeScreen" component={HomeScreen} /> */}
+        {/* <Stack.Screen name="Profile" component={Profile} /> */}
+        {/* <Stack.Screen name="EditProfile" component={EditProfile} /> */}
         {/* <Stack.Screen name="Home" component={Home} /> */}
         {/* <Stack.Screen name="Wallet" component={Wallet} /> */}
-        <Stack.Screen name="buyPack" component={BuyPackage} />
+        {/* <Stack.Screen name="buyPack" component={BuyPackage} /> */}
+        <Stack.Screen name="track" component={Track} />
 
-
->>>>>>> refs/remotes/origin/main
       </Stack.Navigator>
     </NavigationContainer>
   );
