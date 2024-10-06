@@ -31,6 +31,9 @@ const SignIn = () => {
   const phone = route.params?.phone;
   const otp = route.params?.otp;
 
+  handleNavigate = () =>{
+    navigation.navigate('Home')
+  }
   const handleVerify = async () => {
 
     try {
@@ -168,7 +171,7 @@ const SignIn = () => {
                 className="rounded-xl"
               >
                 <Pressable
-                  onPress={handleVerify}
+                  onPress={handleNavi}
                   className="p-4 justify-center items-center"
                 >
                   <Text className="text-white text-lg font-semibold">

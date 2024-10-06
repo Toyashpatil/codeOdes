@@ -50,6 +50,10 @@ const LogIn = () => {
     navigation.navigate("SignIn");
   };
 
+  const handleLogIn = () => {
+    navigation.navigate("Home");
+  };
+
   return (
     <SafeAreaView
       style={{
@@ -106,7 +110,7 @@ const LogIn = () => {
               className="rounded-xl"
             >
               <Pressable
-                onPress={handleLogin}
+                onPress={handleLogIn}
                 className="p-4 justify-center items-center"
               >
                 <Text className="text-white text-lg font-semibold">

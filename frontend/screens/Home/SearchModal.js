@@ -202,6 +202,13 @@ const SearchModal = ({ isModalVisible, closeSearchModal }) => {
 
               {/* Recents Section */}
               <View style={{ paddingHorizontal: 16, marginTop: 24 }}>
+              <TouchableOpacity className="absolute -bottom-[10%] left-[75%] z-10">
+                <View className="w-20 h-20 bg-blue-500 rounded-full items-center justify-center shadow-lg">
+                    <Text className='text-white font-semibold'>
+                    <Icon.ArrowRight height="30" width="30" stroke="white" />
+                    </Text>
+                </View>
+            </TouchableOpacity>
                 <Text style={{ fontWeight: "bold", fontSize: 16, marginBottom: 8 }}>Recents</Text>
                 <ScrollView>
                   {recentPlaces.map((place) => (
