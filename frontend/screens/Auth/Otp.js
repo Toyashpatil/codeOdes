@@ -17,6 +17,7 @@ import axios from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { LinearGradient } from "expo-linear-gradient";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import {BASE_URL} from '../../constants/constant'
 
 const OTP = () => {
   const [otp, setOtp] = useState(["", "", "", "", ""]);
@@ -58,7 +59,7 @@ const OTP = () => {
   const handleVerify = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:3000/user/verify/phone/otp",
+        `${BASE_URL}/user/verify/phone/otp`,
         {
           phone: phone,
           otp: otp.join(""),

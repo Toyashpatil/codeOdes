@@ -15,6 +15,7 @@ import {
 import { useNavigation, useRoute } from "@react-navigation/native";
 import axios from "axios";
 import { LinearGradient } from "expo-linear-gradient";
+import { BASE_URL } from "../../constants/constant";
 
 const SignIn = () => {
   const [formData, setFormData] = useState({
@@ -49,17 +50,14 @@ const SignIn = () => {
         college_name,
       });
 
-      const response = await axios.post(
-        "http://localhost:3000/user/verify/otp", // Make sure the IP is correct for the device
-        {
-          phone: phone,
-          otp: otp,
-          name: name,
-          gender: gender,
-          age: age,
-          college_name: college_name,
-        }
-      );
+      const response = await axios.post(`${BASE_URL}/user/verify/phone/otp`, {
+        phone: phone,
+        otp: otp,
+        name: name,
+        gender: gender,
+        age: age,
+        college_name: college_name,
+      });
 
       if (response.status === 200) {
         // Navigate to Home after successful registration

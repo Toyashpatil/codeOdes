@@ -1,8 +1,8 @@
-import React, { useEffect,useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Provider } from "react-redux";
 import AppNavigator from "./navigation";
 import Landing from "./components/Landing/Landing";
-import store from './store/'
+import store from "./store/";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
