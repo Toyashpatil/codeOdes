@@ -9,10 +9,16 @@ import {
   Platform,
   ImageBackground,
 } from "react-native";
+
 import * as Icon from "react-native-feather";
 import { useNavigation } from "@react-navigation/native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Navbar from "../../components/Navbar/Navbar";
+<<<<<<< HEAD
+import SearchModal from "./SearchModal";
+=======
+import Map from "../../components/Map/Map";
+>>>>>>> refs/remotes/origin/main
 
 const Home = () => {
   const navigation = useNavigation();
@@ -28,7 +34,16 @@ const Home = () => {
   const closeSearchModal = () => {
     setIsModalVisible(false);
   };
+  const [region, setRegion] = useState({
+    latitude: 19.046362226954,
+    longitude:72.871155998075,
+    latitudeDelta: 0.001,
+    longitudeDelta: 0.001,
+  });
 
+    const handleNavigateToProfile = () => {
+      navigation.navigate('Profile');
+    };
   return (
     <>
       <View
@@ -39,17 +54,12 @@ const Home = () => {
         }}
         className="bg-white flex-1"
       >
+
         <StatusBar
           barStyle="dark-content"
           backgroundColor="transparent"
           translucent
         />
-        <ImageBackground //twoyash- change to your map
-          source={require('../../assets/images/splashbg.png')} // Background image
-          style={{ flex: 1 }} // Make the background cover the whole screen
-          resizeMode="cover" // Adjusts how the image is resized
-        >
-          {/* SearchBar */}
           <View className="flex-row items-center space-x-2 px-4 py-2">
             <TouchableOpacity>
               <Icon.Menu
@@ -68,7 +78,11 @@ const Home = () => {
             </TouchableOpacity>
 
           </View>
-        </ImageBackground>
+        
+        <View className='flex items-center justify-center '>
+          <Map region={region} setRegion={setRegion} />
+
+        </View>
         {/* Footer */}
         <View
           style={{
@@ -82,6 +96,10 @@ const Home = () => {
         >
           <Navbar />
         </View>
+        <SearchModal
+        isModalVisible={isModalVisible}
+        closeSearchModal={closeSearchModal}
+      />
       </View>
     </>
   );
