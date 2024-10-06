@@ -17,9 +17,9 @@ function AppNavigator() {
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         {/* <Stack.Screen name="SignIn" component={SignIn} /> */}
-        {/* <Stack.Screen name="LogIn" component={LogIn} />
-        <Stack.Screen name="OTP" component={OTP} />
-        <Stack.Screen name="Home" component={Home} /> */}
+        {/* <Stack.Screen name="LogIn" component={LogIn} /> */}
+        {/* <Stack.Screen name="OTP" component={OTP} /> */}
+        {/* <Stack.Screen name="Home" component={Home} /> */}
         <Stack.Screen name="Ticket" component={Ticket}/>
       </Stack.Navigator>
     </NavigationContainer>

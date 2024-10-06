@@ -15,10 +15,10 @@ const Passes = () => {
          <View className="flex-row justify-between items-center bg-blue-500 p-4 rounded-t-lg">
            <View>
              <Text className="text-white font-bold text-lg">Quaterly</Text>
-             <Text className="text-white text-sm">#abc1234</Text>
+            
              <Text className="text-white text-sm">May 20, 23</Text>
            </View>
-           <Text className="text-white font-bold text-xl">BDT 40</Text>
+           <Text className="text-white font-bold text-xl">Rs 140</Text>
          </View>
    
          {/* Route Section */}
@@ -31,14 +31,14 @@ const Passes = () => {
    
            {/* Bus Icon and Distance */}
            <View className="flex-1 items-center">
-             <Text className="text-gray-500">12 km</Text>
-             <Text className="text-gray-500 mt-1">1 hour 20 Mins</Text>
+             <Text className="text-gray-500 text-xs">12 km</Text>
+             <Text className="text-gray-500 mt-1 text-xs">1 hour 20 Mins</Text>
            </View>
    
            <View className="flex-1 items-end">
              <Text className="text-lg font-bold">Shyamoli</Text>
              <Text className="text-gray-500 text-sm">Dhanmondi</Text>
-             <Text className="text-black font-bold mt-2">12.00 PM</Text>
+             <Text className="text-black font-bold mt-2 ">12.00 PM</Text>
            </View>
          </View>
        </View>
