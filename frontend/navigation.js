@@ -5,6 +5,7 @@ import Home from "./screens/Home/Home";
 import SignIn from "./screens/Auth/SignIn";
 import LogIn from "./screens/Auth/LogIn";
 import OTP from "./screens/Auth/Otp";
+import Ticket from "./screens/Ticket/Ticket";
 import HomeScreen from "./screens/Home/Home";
 <<<<<<< HEAD
 import Profile from "./screens/Profile/Profile";
