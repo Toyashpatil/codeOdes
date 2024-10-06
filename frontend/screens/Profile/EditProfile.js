@@ -1,78 +1,154 @@
-import React from 'react';
+import React, { useState } from "react";
 import {
-  View,
-  Text,
-  Image,
-  SafeAreaView,
-  ScrollView,
-  TouchableOpacity,
-} from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+    View,
+    Text,
+    TextInput,
+    Pressable,
+    SafeAreaView,
+    StatusBar,
+} from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
+import { FontAwesome, Feather, MaterialIcons } from "@expo/vector-icons";
+import ProfileHeader from "./ProfileHeader";
 
 const EditProfile = () => {
-  const profileItems = [
-    { icon: 'location-outline', title: 'My Locations' },
-    { icon: 'shield-checkmark-outline', title: 'Trusted Location' },
-    { icon: 'gift-outline', title: 'Offers & Voucher' },
-    { icon: 'log-out-outline', title: 'Sign Out' },
-  ];
+    const [isEditingDetails, setIsEditingDetails] = useState(false);
+    const [isEditingPassword, setIsEditingPassword] = useState(false);
+    const [details, setDetails] = useState({
+        name: "Dennice Castillo",
+        id: "2018-000001",
+        contact: "09090215234",
+    });
 
-  const renderProfileItem = (item, index) => (
-    <TouchableOpacity key={index} className="flex-row items-center py-4 border-b border-gray-200">
-      <Ionicons name={item.icon} size={24} color="#000" />
-      <Text className="flex-1 ml-4 text-base">{item.title}</Text>
-      <Ionicons name="chevron-forward" size={24} color="#000" />
-    </TouchableOpacity>
-  );
+    const [password, setPassword] = useState({
+        currentPassword: "sample15",
+    });
 
-  return (
-    <SafeAreaView className="flex-1 bg-white">
-      <ScrollView>
-        <View className="flex-row items-center bg-black py-4 px-3">
-          <TouchableOpacity className="mr-3">
-            <Ionicons name="arrow-back" size={24} color="#fff" />
-          </TouchableOpacity>
-          <Text className="text-white text-lg font-bold">Profile</Text>
-        </View>
+    const [showPassword, setShowPassword] = useState(false);
 
-        <View className="items-center py-6 bg-black">
-          <Image
-            source={{ uri: 'https://example.com/placeholder-image.jpg' }}
-            className="w-20 h-20 rounded-full mb-3"
-          />
-          <Text className="text-lg font-bold text-white mb-1">John Doe</Text>
-          <Text className="text-base text-white">01701010101</Text>
-        </View>
+    const toggleEditDetails = () => {
+        setIsEditingDetails(!isEditingDetails);
+    };
 
-        <View className="px-4 pt-5">
-          {profileItems.map(renderProfileItem)}
-        </View>
-      </ScrollView>
+    const toggleEditPassword = () => {
+        setIsEditingPassword(!isEditingPassword);
+    };
 
-      <View className="flex-row justify-around border-t border-gray-200 py-3">
-        <TouchableOpacity className="items-center">
-          <Ionicons name="home-outline" size={24} color="#000" />
-          <Text className="text-xs mt-1">Home</Text>
-        </TouchableOpacity>
-        <TouchableOpacity className="items-center">
-          <Ionicons name="wallet-outline" size={24} color="#000" />
-          <Text className="text-xs mt-1">Wallet</Text>
-        </TouchableOpacity>
-        <TouchableOpacity className="items-center">
-          <Ionicons name="ticket-outline" size={24} color="#000" />
-          <Text className="text-xs mt-1">Ticket</Text>
-        </TouchableOpacity>
-        <TouchableOpacity className="items-center">
-          <Ionicons name="notifications-outline" size={24} color="#000" />
-          <Text className="text-xs mt-1">Notification</Text>
-        </TouchableOpacity>
-        <TouchableOpacity className="items-center">
-          <Ionicons name="person" size={24} color="#4A90E2" />
-          <Text className="text-xs mt-1 text-[#4A90E2]">Profile</Text>
-        </TouchableOpacity>
-      </View>
-    </SafeAreaView>
-  );
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+    };
+
+    const handleSaveSettings = () => {
+        setIsEditingDetails(false);
+        setIsEditingPassword(false);
+        console.log("Details saved:", details);
+        console.log("Password saved:", password);
+    };
+
+    return (
+        <SafeAreaView className="flex-1 bg-white">
+            <StatusBar barStyle="dark-content" backgroundColor="white" />
+            <View className="flex-1 bg-gray-100">
+                <View className="bg-white px-4 py-3">
+                    <ProfileHeader />
+                </View>
+
+                <View className="p-4">
+                    <View className="flex-row justify-between items-center mb-4">
+                        <Text className="text-lg font-semibold">Personal Details</Text>
+                        <Pressable onPress={toggleEditDetails}>
+                            <Text className="text-green-500">{isEditingDetails ? "Cancel" : "Edit"}</Text>
+                        </Pressable>
+                    </View>
+
+                    <View className="space-y-4">
+                        <View className="flex-row items-center p-3 rounded-lg bg-white">
+                            <FontAwesome name="user" size={20} color="gray" />
+                            <TextInput
+                                className="ml-3 flex-1"
+                                editable={isEditingDetails}
+                                value={details.name}
+                                onChangeText={(text) =>
+                                    setDetails({ ...details, name: text })
+                                }
+                            />
+                        </View>
+
+                        <View className="flex-row items-center p-3 rounded-lg bg-white">
+                            <MaterialIcons name="badge" size={20} color="gray" />
+                            <TextInput
+                                className="ml-3 flex-1"
+                                editable={isEditingDetails}
+                                value={details.id}
+                                onChangeText={(text) =>
+                                    setDetails({ ...details, id: text })
+                                }
+                            />
+                        </View>
+
+                        <View className="flex-row items-center p-3 rounded-lg bg-white">
+                            <Feather name="phone" size={20} color="gray" />
+                            <TextInput
+                                className="ml-3 flex-1"
+                                editable={isEditingDetails}
+                                value={details.contact}
+                                onChangeText={(text) =>
+                                    setDetails({ ...details, contact: text })
+                                }
+                            />
+                        </View>
+                    </View>
+                </View>
+
+                <View className="p-4">
+                    <View className="flex-row justify-between items-center mb-4">
+                        <Text className="text-lg font-semibold">Change Password</Text>
+                        <Pressable onPress={toggleEditPassword}>
+                            <Text className="text-green-500">{isEditingPassword ? "Cancel" : "Edit"}</Text>
+                        </Pressable>
+                    </View>
+
+                    <View className="flex-row items-center p-3 rounded-lg bg-white">
+                        <Feather name="lock" size={20} color="gray" />
+                        <TextInput
+                            className="ml-3 flex-1"
+                            editable={isEditingPassword}
+                            secureTextEntry={!showPassword}
+                            value={password.currentPassword}
+                            onChangeText={(text) =>
+                                setPassword({ ...password, currentPassword: text })
+                            }
+                        />
+                        <Pressable onPress={togglePasswordVisibility}>
+                            <Feather
+                                name={showPassword ? "eye-off" : "eye"}
+                                size={20}
+                                color="gray"
+                            />
+                        </Pressable>
+                    </View>
+                </View>
+
+                <View className="p-4 mb-4 absolute w-full bottom-0">
+                    <LinearGradient
+                        colors={["#007022", "#54d17a", "#bcffd0"]}
+                        start={{ x: 0, y: 1 }}
+                        end={{ x: 1.9, y: 0 }}
+                        className="rounded-xl"
+                    >
+                        <Pressable
+                            onPress={handleSaveSettings}
+                            className="p-3 justify-center items-center"
+                        >
+                            <Text className="text-white text-lg font-semibold">
+                                Save settings
+                            </Text>
+                        </Pressable>
+                    </LinearGradient>
+                </View>
+            </View>
+        </SafeAreaView>
+    );
 };
 
 export default EditProfile;
