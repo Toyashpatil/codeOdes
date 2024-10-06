@@ -32,6 +32,7 @@ const SignIn = () => {
   const otp = route.params?.otp;
 
   const handleVerify = async () => {
+
     try {
       // Use formData instead of directly referencing variables
       const { name, gender, age, college_name } = formData;
@@ -50,12 +51,11 @@ const SignIn = () => {
         college_name,
       });
 
-      const response = await axios.post(`${BASE_URL}/user/verify/phone/otp`, {
+      const response = await axios.post("http://localhost:3000/user/verify/phone/otp", {
         phone: phone,
         otp: otp,
         name: name,
         gender: gender,
-        age: age,
         college_name: college_name,
       });
 

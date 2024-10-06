@@ -142,7 +142,7 @@ const EditProfile = () => {
                 className="p-4 justify-center items-center"
               >
                 <Text className="text-white text-lg font-semibold">
-                  Save setIsEditingPassword
+                  Save settings
                 </Text>
               </Pressable>
             </LinearGradient>

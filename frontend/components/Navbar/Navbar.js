@@ -11,9 +11,21 @@ const Navbar = () => {
         navigation.navigate('Profile');
     };
 
+    const handleNavigateToWallet = () => {
+      navigation.navigate('Wallet');
+  };
+
+  const handleNavigateToTicket = () => {
+    navigation.navigate('Ticket');
+};
+
+    
+
     const handleSOSPress = () => {
         setModalVisible(true);
     };
+
+    
 
     const handleSendAlert = () => {
         // Implement the logic to send the alert message here
@@ -63,7 +75,7 @@ const Navbar = () => {
                     <Ionicons name="home-outline" size={24} color="#000" />
                     <Text className="text-xs mt-1">Home</Text>
                 </TouchableOpacity>
-                <TouchableOpacity className="items-center">
+                <TouchableOpacity className="items-center" onPress={handleNavigateToWallet}>
                     <Ionicons name="wallet-outline" size={24} color="#000" />
                     <Text className="text-xs mt-1">Wallet</Text>
                 </TouchableOpacity>

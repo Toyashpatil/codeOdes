@@ -59,7 +59,7 @@ const OTP = () => {
   const handleVerify = async () => {
     try {
       const response = await axios.post(
-        `${BASE_URL}/user/verify/phone/otp`,
+        "http://localhost:3000/user/verify/phone/otp",
         {
           phone: phone,
           otp: otp.join(""),
