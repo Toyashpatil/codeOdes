@@ -14,11 +14,8 @@ import * as Icon from "react-native-feather";
 import { useNavigation } from "@react-navigation/native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Navbar from "../../components/Navbar/Navbar";
-<<<<<<< HEAD
 import SearchModal from "./SearchModal";
-=======
 import Map from "../../components/Map/Map";
->>>>>>> refs/remotes/origin/main
 
 const Home = () => {
   const navigation = useNavigation();

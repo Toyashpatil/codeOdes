@@ -10,6 +10,8 @@ import {
   StatusBar,
   Text,
   ScrollView,
+  Touchable,
+  TouchableOpacity,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import * as Icon from "react-native-feather";
@@ -154,6 +156,7 @@ const SearchModal = ({ isModalVisible, closeSearchModal }) => {
                     borderColor: "#E5E5E5",
                   }}
                 >
+                  <TouchableOpacity>
                   <View style={{ flexDirection: "row", alignItems: "center" }}>
                     <Icon.Home height="20" width="20" stroke="black" />
                     <View style={{ marginLeft: 12 }}>
@@ -165,6 +168,7 @@ const SearchModal = ({ isModalVisible, closeSearchModal }) => {
                       </Text>
                     </View>
                   </View>
+                  </TouchableOpacity>
                 </View>
 
                 {/* Office Section */}
